@@ -2,7 +2,7 @@ service routing protocols model multi-agent
 !
 hostname A-SPINE1
 !
-vrf definition MGMT
+vrf instance MGMT
 !
 interface Ethernet1
    description A-LEAF1A
@@ -72,7 +72,7 @@ router bgp 65001
    neighbor EVPN-OVERLAY-PEERS peer-group
    neighbor EVPN-OVERLAY-PEERS next-hop-unchanged
    neighbor EVPN-OVERLAY-PEERS update-source Loopback0
-   neighbor EVPN-OVERLAY-PEERS fall-over bfd
+   neighbor EVPN-OVERLAY-PEERS bfd
    neighbor EVPN-OVERLAY-PEERS ebgp-multihop 3
    neighbor EVPN-OVERLAY-PEERS password @rista123
    neighbor EVPN-OVERLAY-PEERS send-community
