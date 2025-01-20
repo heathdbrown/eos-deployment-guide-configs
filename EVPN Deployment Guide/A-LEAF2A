@@ -169,7 +169,7 @@ router bgp 65102
    neighbor 1.1.1.202 peer group EVPN-OVERLAY-PEERS
    neighbor 10.102.201.201 peer group IPv4-UNDERLAY-PEERS
    neighbor 10.102.202.202 peer group IPv4-UNDERLAY-PEERS
-   neighbor 192.0.0.2 peer-group MLAG-IPv4-UNDERLAY-PEER
+   neighbor 192.0.0.2 peer group MLAG-IPv4-UNDERLAY-PEER
    redistribute connected route-map RM-CONN-2-BGP
    !
    vlan-aware-bundle TENANT-A
@@ -189,7 +189,7 @@ router bgp 65102
       rd 1.1.1.102:1
       route-target import evpn 1:1
       route-target export evpn 1:1
-      neighbor 192.0.0.2 peer-group MLAG-IPv4-UNDERLAY-PEER
+      neighbor 192.0.0.2 peer group MLAG-IPv4-UNDERLAY-PEER
       redistribute connected
 !
 management api http-commands
