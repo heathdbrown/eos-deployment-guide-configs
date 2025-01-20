@@ -146,7 +146,7 @@ router bgp 65102
    router-id 1.1.1.102
    no bgp default ipv4-unicast
    maximum-paths 2
-   neighbor EVPN-OVERLAY-PEERS peer-group
+   neighbor EVPN-OVERLAY-PEERS peer group
    neighbor EVPN-OVERLAY-PEERS remote-as 65001
    neighbor EVPN-OVERLAY-PEERS update-source Loopback0
    neighbor EVPN-OVERLAY-PEERS bfd
@@ -154,7 +154,7 @@ router bgp 65102
    neighbor EVPN-OVERLAY-PEERS password @rista123
    neighbor EVPN-OVERLAY-PEERS send-community
    neighbor EVPN-OVERLAY-PEERS maximum-routes 0 
-   neighbor IPv4-UNDERLAY-PEERS peer-group
+   neighbor IPv4-UNDERLAY-PEERS peer group
    neighbor IPv4-UNDERLAY-PEERS remote-as 65001
    neighbor IPv4-UNDERLAY-PEERS password @rista123
    neighbor IPv4-UNDERLAY-PEERS send-community
