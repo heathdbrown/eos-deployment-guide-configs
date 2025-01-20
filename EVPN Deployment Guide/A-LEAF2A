@@ -23,9 +23,9 @@ vlan 4094
    name MLAGPEER
    trunk group MLAGPEER
 !
-vrf definition A
+vrf instance A
 !
-vrf definition MGMT
+vrf instance MGMT
 !
 interface Port-Channel11
    description MLAG-HostB
@@ -79,24 +79,24 @@ interface Loopback1
    ip address 2.2.2.2/32
 !
 interface Loopback223
-   vrf forwarding A
+   vrf A
    ip address 223.0.0.102/32
 !
 interface Management1
-   vrf forwarding MGMT
+   vrf MGMT
    ip address 10.50.50.102/24
 !
 interface Vlan10
-   vrf forwarding A
+   vrf A
    ip address virtual 10.10.10.1/24
 !
 interface Vlan30
-   vrf forwarding A
+   vrf A
    ip address virtual 30.30.30.1/24
 !
 interface Vlan4000
    description MLAG iBGP Peering: VRF A
-   vrf forwarding A
+   vrf A
    ip address 192.0.0.1/24
 !
 interface Vlan4093
@@ -149,7 +149,7 @@ router bgp 65102
    neighbor EVPN-OVERLAY-PEERS peer-group
    neighbor EVPN-OVERLAY-PEERS remote-as 65001
    neighbor EVPN-OVERLAY-PEERS update-source Loopback0
-   neighbor EVPN-OVERLAY-PEERS fall-over bfd
+   neighbor EVPN-OVERLAY-PEERS bfd
    neighbor EVPN-OVERLAY-PEERS ebgp-multihop 3
    neighbor EVPN-OVERLAY-PEERS password @rista123
    neighbor EVPN-OVERLAY-PEERS send-community
